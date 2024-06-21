@@ -1,5 +1,4 @@
 import { title, subtitle } from "@/components/primitives";
-import { getDictionary } from '../dictionaries'
 
 export default function Home() {
   return (

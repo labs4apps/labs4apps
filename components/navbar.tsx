@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -17,6 +18,8 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
+import { useLanguage } from '@/components/language-context'
+
 import {
   TwitterIcon,
   GithubIcon,
@@ -25,9 +28,12 @@ import {
 } from "@/components/icons";
 import LanguageSelector from "@/components/language-selector"; // Importujemy LanguageSelector
 
-import { getDictionary } from '../app/dictionaries'
+import { getDictionary } from '@/components/dictionaries'
+
 
 export const Navbar = () => {
+  const { dictionary } = useLanguage();
+  
   const searchInput = (
     <Input
       aria-label="Search"
@@ -55,7 +61,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             {/* <Logo /> */}
-            <img src="/logo-single-web.png" style={{ width: "24px" }} />
+            <img src="/_static/logo-single-web.png" style={{ width: "24px" }} alt="labs4apps logo" />
             <p className="font-bold text-inherit">labs4apps</p>
           </NextLink>
         </NavbarBrand>
@@ -91,7 +97,9 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden lg:flex"><LanguageSelector /></NavbarItem> {/* Dodano wybór języka */}
+        <NavbarItem className="hidden lg:flex">
+          <LanguageSelector />
+        </NavbarItem>{" "}
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal

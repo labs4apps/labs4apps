@@ -20,11 +20,12 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import {
   TwitterIcon,
   GithubIcon,
-  DiscordIcon,
   HeartFilledIcon,
   SearchIcon,
-  Logo,
 } from "@/components/icons";
+import LanguageSelector from "@/components/language-selector"; // Importujemy LanguageSelector
+
+import { getDictionary } from '../app/dictionaries'
 
 export const Navbar = () => {
   const searchInput = (
@@ -54,7 +55,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             {/* <Logo /> */}
-            <img style={{width: "24px"}} src="/logo-single-web.png"></img>
+            <img src="/logo-single-web.png" style={{ width: "24px" }} />
             <p className="font-bold text-inherit">labs4apps</p>
           </NextLink>
         </NavbarBrand>
@@ -90,6 +91,7 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
+        <NavbarItem className="hidden lg:flex"><LanguageSelector /></NavbarItem> {/* Dodano wybór języka */}
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal

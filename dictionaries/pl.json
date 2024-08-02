@@ -1,3 +1,14 @@
 {
-    "home": "strona główna"
+    "home": "Strona główna",
+    "about": "O nas",
+    "technology": "Technologia",
+    "careers": "Kariera",
+    "services": "Usługi",
+    "case_studies": "Studium Przypadku",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "get_proposal": "Uzyskaj wycenę",
+    "frontpage_main_text1": "Zrewolucjonizuj swój",
+    "frontpage_main_text2": "Biznes",
+    "frontpage_main_text3": "z naszymi rozwiązaniami IT."
 }

@@ -1,4 +1,14 @@
 {
-    "home": "home"
-    
+    "home": "Home",
+    "about": "About",
+    "technology": "Technologia",
+    "careers": "Careers",
+    "services": "Services",
+    "case_studies": "Case studies",
+    "contact": "Contact",
+    "blog": "Blog",
+    "get_proposal": "Get a proposal",
+    "frontpage_main_text1": "Transform Your",
+    "frontpage_main_text2": "Business",
+    "frontpage_main_text3": "with Custom IT Solutions."
 }

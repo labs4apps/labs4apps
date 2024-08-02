@@ -28,12 +28,9 @@ import {
 } from "@/components/icons";
 import LanguageSelector from "@/components/language-selector"; // Importujemy LanguageSelector
 
-import { getDictionary } from '@/components/dictionaries'
-
 
 export const Navbar = () => {
   const { dictionary } = useLanguage();
-  
   const searchInput = (
     <Input
       aria-label="Search"
@@ -61,12 +58,12 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             {/* <Logo /> */}
-            <img src="/_static/logo-single-web.png" style={{ width: "24px" }} alt="labs4apps logo" />
-            <p className="font-bold text-inherit">labs4apps</p>
+            <img src="/_static/logo-single-web.png" style={{ width: "24px" }} alt="logo" />
+            {/* <p className="font-bold text-inherit">labs4apps</p> */}
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
+        {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
@@ -76,10 +73,10 @@ export const Navbar = () => {
                 color="foreground"
                 href={item.href}
               >
-                {item.label}
+                {dictionary[item.label]}
               </NextLink>
             </NavbarItem>
-          ))}
+            ))} 
         </ul>
       </NavbarContent>
 
@@ -96,20 +93,19 @@ export const Navbar = () => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
+        {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
         <NavbarItem className="hidden lg:flex">
-          <LanguageSelector />
+        <LanguageSelector />
         </NavbarItem>{" "}
         <NavbarItem className="hidden md:flex">
           <Button
-            isExternal
             as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.like}
-            startContent={<HeartFilledIcon className="text-danger" />}
+            href="/contact"
+            
             variant="flat"
           >
-            Like
+            {dictionary["get_proposal"]}  ->
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -119,29 +115,39 @@ export const Navbar = () => {
           <GithubIcon className="text-default-500" />
         </Link>
         <ThemeSwitch />
+        <LanguageSelector />
         <NavbarMenuToggle />
       </NavbarContent>
-
+          
       <NavbarMenu>
-        {searchInput}
+        {/* {searchInput} */}
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
+        
+        {siteConfig.navItems.map((item) => (
+            <NavbarMenuItem key={item.href}>
+              <NextLink
+                className={clsx(
+                  linkStyles({ color: "foreground" }),
+                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                )}
+                color="foreground"
+                href={item.href}
               >
-                {item.label}
-              </Link>
+                {dictionary[item.label]}
+              </NextLink>
             </NavbarMenuItem>
-          ))}
+            ))} 
+            <NavbarMenuItem>
+              <Button
+                as={Link}
+                className="text-sm font-normal text-default-600 bg-default-100 w-full"
+                href="/contact"
+                
+                variant="flat"
+              >
+                {dictionary["get_proposal"]}
+              </Button>
+            </NavbarMenuItem>
         </div>
       </NavbarMenu>
     </NextUINavbar>

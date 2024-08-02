@@ -1,62 +1,46 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "LABS4APPS - Konsulting IT, Usługi Programistyczne",
+  description: "Konsulting IT, Usługi Programistyczne.",
   navItems: [
     {
-      label: "Home",
-      href: "/",
+      label: "services",
+      href: "/services",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "contact",
+      href: "/contact",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
+      label: "blog",
       href: "/blog",
     },
     {
-      label: "About",
+      label: "about",
       href: "/about",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "services",
+      href: "/services",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "contact",
+      href: "/contact",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "blog",
+      href: "/blog",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "about",
+      href: "/about",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "get_proposal",
+      href: "/contact",
     },
   ],
   links: {

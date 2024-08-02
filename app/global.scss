@@ -2,6 +2,32 @@
     color: pink
 }
 .frontpage-video {
-    height: 600px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
+}
+.frontpage-video-text{
+    position: absolute;
+    font-size: 25px;
+    width: 100%;
+    left: 50px;
+    top: 100px;
+}
+@media screen and (min-width: 768px) {
+    .frontpage-video {
+        aspect-ratio: 20 / 9;
+    }
+    .frontpage-video-text {
+        width: 50%;
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .frontpage-video {
+        aspect-ratio: 25 / 9;
+    }
+    .frontpage-video-text {
+        font-size: 40px;
+        width: 40%;
+    }
 }

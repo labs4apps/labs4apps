@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -46,7 +47,7 @@ export default function RootLayout({
             <main className="mx-0 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3" />
+            <Footer />
           </div>
         </Providers>
       </body>

@@ -4,6 +4,8 @@ import { useState } from "react";
 import {subtitle, title} from "@/components/primitives";
 
 import { useLanguage } from '@/components/language-context'
+import { Services } from "@/components/services";
+import { WhyUs } from "@/components/whyus";
 
 export const FrontPage = () => {
     const [count, setCount] = useState(0);
@@ -18,7 +20,7 @@ export const FrontPage = () => {
                 </video>
             </div>
             <div className="frontpage-video-text pr-20">
-                Embrace the Future of Technology with Our Innovative IT Solutions.
+                Embrace the <span className="colored-text">Future</span> of Technology with Our Innovative IT Solutions.
             </div>
             <div className="inline-block text-center justify-center mx-20 mt-20">
 
@@ -35,12 +37,10 @@ export const FrontPage = () => {
 
             <div className="flex gap-3"/>
         </section>
-        <section className="flex flex-col items-center justify-center gap-4 mt-20">
-            <h1 className={title()}>{dictionary["frontpage_section2-text1"]}</h1>
-        </section>
+        
+        <Services/>
+        <WhyUs/>
+        
         </>
-
-
-
-    );
+  );
 };
